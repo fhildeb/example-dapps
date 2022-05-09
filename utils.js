@@ -49,3 +49,22 @@ async function connectWeb3() {
     return false;
   }
 }
+
+async function checkNetwork() {
+  // Access web3
+  const web3 = new Web3(window.ethereum);
+
+  // If its MetaMask, check if network is the right one
+  if (window.ethereum.isMetaMask) {
+    const networkID = await web3.eth.net.getId();
+    const networkHost = await web3.eth.net._provider.host;
+
+    // Check if the right network is configured
+    if (networkID !== 22 && networkHost !== "https://rpc.l14.lukso.network") {
+      el("#network").style.display = "block";
+      return false;
+    }
+    return true;
+  }
+  return true;
+}
