@@ -1,74 +1,83 @@
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
-  </head>
-  <body class="container" style="padding-top: 3%;">
-    <h2><a href="index.html">Home</a></h2>
-    <h4>Simple Storage dApp</h4>
 
-    <!-- Extension Notice -->
-    <div style=" border: 1px solid #9b4dca; padding: 10px; margin-bottom: 10px;">
-      <p>Make sure to either enable the Universal Profile Extension or MetaMask at the same time. Here you can find guides to do so for
-        <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank">Chrome</a> and
-        <a href="https://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_disabling-and-removing-extensions" target="_blank">Firefox.</a>
-      </p>
-      <table>
-        <tr>
-          <th>By using the Universal Profile Extension:</th>
-          <th>By using the MetaMask Extension:</th>
-        </tr>
-        <tr>
-          <td>- Log in and start interacting</td>
-          <td>- Log in </br> - <a href="https://docs.lukso.tech/networks/l14-testnet" target=”_blank”>Add the LUKSO L14 Network</a>
-            </br> - Swap to the LUKSO L14 Network and refresh the page
-            </br> - <a href="http://faucet.l14.lukso.network/" target=”_blank”>Get test token from the LUKSO L14 faucet</a>
-            </br> - Start interacting</td>
-        </tr>
-      </table>
-    </div>
+<head>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
+</head>
 
-    <!-- Warnings -->
-    <p id="browser" style=" background-color: #F4F5F6; display: none; padding: 10px;">Please switch to a
-      <a href="https://www.google.com/chrome/" target="_blank">Chrome</a> or
-      <a href="https://www.mozilla.org/firefox/new/" target="_blank">Firefox</a> browser to use this dApp.
+<body class="container" style="padding-top: 3%;">
+  <h2><a href="index.html">Home</a></h2>
+  <h4>Simple Storage dApp</h4>
+
+  <!-- Extension Notice -->
+  <div style=" border: 1px solid #9b4dca; padding: 10px; margin-bottom: 10px;">
+    <p>Make sure to either enable the Universal Profile Extension or MetaMask at the same time. Here you can find guides
+      to do so for
+      <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank">Chrome</a> and
+      <a href="https://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_disabling-and-removing-extensions"
+        target="_blank">Firefox.</a>
     </p>
-    <p id="network" style=" background-color: #F4F5F6; display: none; padding: 10px;">
-        Please swap to the LUKSO L14 testnetwork in order to interact.
-    </p>
-    <p id="install" style=" background-color: #F4F5F6; display: none; padding: 10px;">
-        Please install the
-        <a href="WIP" target="_blank">Universal Profile</a> or
-        <a href="https://metamask.io/" target="_blank">MetaMask</a> extension to login.
-    </p>
-    <div id="login" style=" background-color: #F4F5F6; padding: 10px 10px 0px 10px; display: none; align-items: center;">
-        <button id="loginbutton">Log in to your browser extension</button>
-    </div>
+    <table>
+      <tr>
+        <th>By using the Universal Profile Extension:</th>
+        <th>By using the MetaMask Extension:</th>
+      </tr>
+      <tr>
+        <td>- Log in and start interacting</td>
+        <td>- Log in </br> - <a href="https://docs.lukso.tech/networks/l14-testnet" target=”_blank”>Add the LUKSO L14
+            Network</a>
+          </br> - Swap to the LUKSO L14 Network and refresh the page
+          </br> - <a href="http://faucet.l14.lukso.network/" target=”_blank”>Get test token from the LUKSO L14
+            faucet</a>
+          </br> - Start interacting</td>
+      </tr>
+    </table>
+  </div>
 
-    <hr />
+  <!-- Warnings -->
+  <p id="browser" style=" background-color: #F4F5F6; display: none; padding: 10px;">Please switch to a
+    <a href="https://www.google.com/chrome/" target="_blank">Chrome</a> or
+    <a href="https://www.mozilla.org/firefox/new/" target="_blank">Firefox</a> browser to use this dApp.
+  </p>
+  <p id="network" style=" background-color: #F4F5F6; display: none; padding: 10px;">
+    Please swap to the LUKSO L14 testnetwork in order to interact.
+  </p>
+  <p id="install" style=" background-color: #F4F5F6; display: none; padding: 10px;">
+    Please install the
+    <a href="WIP" target="_blank">Universal Profile</a> or
+    <a href="https://metamask.io/" target="_blank">MetaMask</a> extension to login.
+  </p>
+  <div id="login" style=" background-color: #F4F5F6; padding: 10px 10px 0px 10px; display: none; align-items: center;">
+    <button id="loginbutton">Log in to your browser extension</button>
+  </div>
 
-    <!-- dApp Frontend -->
-    <div class="row">
-      <div class="column column-60">
-        <label>Set Value</label>
-        <input id="valueAmount" type="number" placeholder="i.e. 4500" />
-        <div id="error" style="color: #9b4dca; padding-bottom: 10px;">Anyone can set/get values to/from the blockchain.</div>
-        <button id="setValue">Set Value</button>
-        <button id="getValue">Get Value</button>
+  <hr />
 
-        <br /><br />
-        <div id="response" style="padding: 20px; border: 1px solid #9b4dca; word-wrap: break-word; min-height: 94px">Empty response window</div>
+  <!-- dApp Frontend -->
+  <div class="row">
+    <div class="column column-60">
+      <label>Set Value</label>
+      <input id="valueAmount" type="number" placeholder="i.e. 4500" />
+      <div id="error" style="color: #9b4dca; padding-bottom: 10px;">Anyone can set/get values to/from the blockchain.
       </div>
-      <div class="column column-40">
-        <label>ABI</label>
-        <textarea id="abi" style="height: 256px;"></textarea>
-      </div>
+      <button id="setValue">Set Value</button>
+      <button id="getValue">Get Value</button>
+
+      <br /><br />
+      <div id="response" style="padding: 20px; border: 1px solid #9b4dca; word-wrap: break-word; min-height: 94px">Empty
+        response window</div>
     </div>
+    <div class="column column-40">
+      <label>ABI</label>
+      <textarea id="abi" style="height: 256px;"></textarea>
+    </div>
+  </div>
 
-    <br /><br />
+  <br /><br />
 
-    <label>Solidity Code</label>
+  <label>Solidity Code</label>
 
-    <pre><code>
+  <pre><code>
       contract SimpleStore {
 
         function set(uint _value) public {
@@ -82,63 +91,89 @@
         uint value;
       }
     </code></pre>
-    <hr />
-    <b style="padding-bottom: 50px ">Repository File</b><a href="https://github.com/lukso-network/example-dapps-ethjs/blob/master/first-contract.html" target="_blank">lukso-network/example-dapps-ethjs/first-contract.html</a>
+  <hr />
+  <b style="padding-bottom: 50px ">Repository File</b><a
+    href="https://github.com/lukso-network/example-dapps-ethjs/blob/master/first-contract.html"
+    target="_blank">lukso-network/example-dapps-ethjs/first-contract.html</a>
 
-    <!-- Web3 -->
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <!-- Web3 -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 
-    <!-- Connect Extension & Check Network -->
-    <script src="./utils.js"></script>
+  <!-- Connect Extension & Check Network -->
+  <script src="./utils.js"></script>
 
-    <!-- dApp Function -->
-    <script type="text/javascript">
-      let el = function(id){ return document.querySelector(id); };
+  <!-- Main Function -->
+  <script type="text/javascript">
 
-      const SimpleStoreABI = [{"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_value","type":"uint256"}],"name":"set","outputs":[],"stateMutability":"nonpayable","type":"function"}];
-      el('#abi').value = JSON.stringify(SimpleStoreABI, null, 2);
+    // Helper function to search for HTML elements
+    let el = function (id) { return document.querySelector(id); };
 
-      async function dApp() {
+    // ABI of the deployed contract
+    const SimpleStoreABI = [{ "inputs": [], "name": "get", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_value", "type": "uint256" }], "name": "set", "outputs": [], "stateMutability": "nonpayable", "type": "function" }];
 
-        // Check network
-        if(await connectWeb3() && await checkNetwork()){
-          const web3 = new Web3(window.ethereum);
-          let account = await ethereum.request({ method: "eth_accounts" });
+    // Showing the ABI in the input field
+    el('#abi').value = JSON.stringify(SimpleStoreABI, null, 2);
 
-          // Static dApp contract
-          let simpleStoreInstance = new web3.eth.Contract(SimpleStoreABI, '0xaA61d96cB849246Ebf3cf148e2f42F3FF216EA4D');
-          
-          //Set Function
-          el('#setValue').addEventListener('click', function(){
-            let input = el('#valueAmount').value;
-            // Check if input is valid
-            if (input.length >= 1 && !isNaN(input)){
-              el('#response').innerHTML = "Trying to set value...";
-              el('#error').innerHTML = "Anyone can set/get values to/from the blockchain.";
+    // dApp code
+    async function dApp() {
 
-                simpleStoreInstance.methods.set(input).send({ from: account[0]})
-                .then(function(transactionReceipt){
-                  el('#response').innerHTML = 'Value set. Your transaction hash is: ' + transactionReceipt.transactionHash;
-                });
-            }
+      /**
+       * Only start the dApp if: an extension is installed and right network connected 
+       * Functions can be found in utils.js and return bool
+       */
+      if (await connectWeb3() && await checkNetwork()) {
 
-            // input invalid
-            else{
-              el('#error').innerHTML = "You have to input a number before setting the value!"
-            }
-          });
+        // Set up web3 library and get account
+        const web3 = new Web3(window.ethereum);
+        let account = await ethereum.request({ method: "eth_accounts" });
 
-          // Get Function
-          el('#getValue').addEventListener('click', function(){
-            simpleStoreInstance.methods.get().call()
-            .then(function(valueStored){
+        // Deployed smart contract on L14
+        let simpleStoreInstance = new web3.eth.Contract(SimpleStoreABI, '0xaA61d96cB849246Ebf3cf148e2f42F3FF216EA4D');
+
+        // Add set button functionality
+        el('#setValue').addEventListener('click', function () {
+          let input = el('#valueAmount').value;
+
+          // Check if user input is a valid
+          if (input.length >= 1 && !isNaN(input)) {
+
+            // Update response and error element
+            el('#response').innerHTML = "Trying to set value...";
+            el('#error').innerHTML = "Anyone can set/get values to/from the blockchain.";
+
+            /**
+             * Send set transaction from connected account.
+             * Will use first connected address on 3rd party extensions
+             */
+            simpleStoreInstance.methods.set(input).send({ from: account[0] })
+              .then(function (transactionReceipt) {
+                el('#response').innerHTML = 'Value set. Your transaction hash is: ' + transactionReceipt.transactionHash;
+              });
+          }
+
+          // User input is invalid
+          else {
+
+            // Show invalid network notice
+            el('#error').innerHTML = "You have to input a number before setting the value!"
+          }
+        });
+
+        // Add get button functionality
+        el('#getValue').addEventListener('click', function () {
+
+          // Make a call to the smart contract and receive the stored value
+          simpleStoreInstance.methods.get().call()
+            .then(function (valueStored) {
               el('#response').innerHTML = 'The current value  stored in the smart contract is: ' + valueStored;
             });
-          });
-        }
-      };
-      dApp();
+        });
+      }
+    };
+    checkNetwork();
+    dApp();
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>
