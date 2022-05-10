@@ -3,52 +3,44 @@
 <head>
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
+  <link rel="stylesheet/less" type="text/css" href="styles.less" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
 </head>
 
 <body class="container" style="padding-top: 3%;">
-  <h2><a href="index.html">Home</a></h2>
-  <h4>Simple Storage dApp</h4>
+  <p><a href="index.html">Back to Landing Page</a></p>
+  <h2>Simple Storage dApp</h2>
 
   <!-- Extension Notice -->
-  <div style=" border: 1px solid #9b4dca; padding: 10px; margin-bottom: 10px;">
-    <p>Make sure to either enable the Universal Profile Extension or MetaMask at the same time. Here you can find guides
-      to do so for
-      <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank">Chrome</a> and
-      <a href="https://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_disabling-and-removing-extensions"
-        target="_blank">Firefox.</a>
-    </p>
-    <table>
-      <tr>
-        <th>By using the Universal Profile Extension:</th>
-        <th>By using the MetaMask Extension:</th>
-      </tr>
-      <tr>
-        <td>- Log in and start interacting</td>
-        <td>- Log in </br> - <a href="https://docs.lukso.tech/networks/l14-testnet" target=”_blank”>Add the LUKSO L14
-            Network</a>
-          </br> - Swap to the LUKSO L14 Network and refresh the page
-          </br> - <a href="http://faucet.l14.lukso.network/" target=”_blank”>Get test token from the LUKSO L14
-            faucet</a>
-          </br> - Start interacting</td>
-      </tr>
-    </table>
-  </div>
+  <p class="note" style="display: block;">If you have multiple Web3 extensions installed, make sure to only enable one.
+    Here
+    you can find guides to manage
+    <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank">Chrome</a> and
+    <a href="https://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_disabling-and-removing-extensions"
+      target="_blank">Firefox</a> extensions.
+  </p>
 
   <!-- Warnings -->
-  <p id="browser" style=" background-color: #F4F5F6; display: none; padding: 10px;">Please switch to a
+  <div class="warning" id="extension" style="display: none">
+    MetaMask detected. To ensure the best expirience, install the
+    <a href="https://docs.lukso.tech/guides/universal-profile/browser-extension/install-browser-extension">Universal
+      Profile Browser
+      Extension</a> from LUKSO.
+  </div>
+  <p id="browser" class="warning">Please switch to a
     <a href="https://www.google.com/chrome/" target="_blank">Chrome</a> or
     <a href="https://www.mozilla.org/firefox/new/" target="_blank">Firefox</a> browser to use this dApp.
   </p>
-  <p id="network" style=" background-color: #F4F5F6; display: none; padding: 10px;">
+  <p id="network" class="warning"">
     Please swap to the LUKSO L14 testnetwork in order to interact.
   </p>
-  <p id="install" style=" background-color: #F4F5F6; display: none; padding: 10px;">
+  <p id=" install" class="warning"">
     Please install the
-    <a href="WIP" target="_blank">Universal Profile</a> or
+    <a href=" WIP" target="_blank">Universal Profile</a> or
     <a href="https://metamask.io/" target="_blank">MetaMask</a> extension to login.
   </p>
-  <div id="login" style=" background-color: #F4F5F6; padding: 10px 10px 0px 10px; display: none; align-items: center;">
-    <button id="loginbutton">Log in to your browser extension</button>
+  <div id="login" class="warning"">
+    <button id=" loginbutton">Log in to your browser extension</button>
   </div>
 
   <hr />
@@ -64,7 +56,8 @@
       <button id="getValue">Get Value</button>
 
       <br /><br />
-      <div id="response" style="padding: 20px; border: 1px solid #9b4dca; word-wrap: break-word; min-height: 94px">Empty
+      <div id="response" style="padding: 20px; border: 1px solid #9b4dca; word-wrap: break-word; min-height: 94px">
+        Empty
         response window</div>
     </div>
     <div class="column column-40">
@@ -114,7 +107,7 @@
     // Showing the ABI in the input field
     el('#abi').value = JSON.stringify(SimpleStoreABI, null, 2);
 
-    // dApp code
+    // dApp Functionality
     async function dApp() {
 
       /**
@@ -170,7 +163,8 @@
         });
       }
     };
-    checkNetwork();
+
+    // Start the dApp function
     dApp();
 
   </script>
