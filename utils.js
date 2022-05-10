@@ -72,6 +72,9 @@ async function checkNetwork() {
     // If address is EOA, likely a 3rd party extension is used
     if (address == '0x') {
 
+      // Show 3rd party extension notice
+      el("#extension").style.display = "block";
+
       // Get its network ID
       const networkID = await web3.eth.net.getId();
 
@@ -82,7 +85,6 @@ async function checkNetwork() {
         el("#network").style.display = "block";
         return false;
       }
-
       // 3rd party extension is connected to the right network
       return true;
     }
