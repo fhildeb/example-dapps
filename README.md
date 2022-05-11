@@ -12,7 +12,7 @@ python3 -m http.server --cgi 8080
 
 ## Hosted
 
-[WIP](WIP)
+[LUKSO Sample dApps](WIP)
 
 ## Usage
 
@@ -21,24 +21,21 @@ Open any of the `.html` files in `Chrome` or `Firefox`. Everything runs out of t
 ## Available Examples
 
 - [Account dApp](WIP) - [code](./accounts.html) -- See your Ethereum accounts and balances
-- [First Contract dApp](WIP) - [code](./first-contract.html) - Set and Get from a SimpleStore contract
-- [TicTacToe dApp](WIP) - [code](./tictactoe.html) - A tic tac toe game, the winning player gets the reward!
+- [First Contract dApp](WIP) - [code](./first-contract.html) -- Set and Get from a SimpleStore contract
 
 ## About
 
-This is a small set of dApps and apps using `web3`.
+This is a small set of dApps using `web3.js`.
 
-All listed examples on the hosted [landingpage](WIP) connect to the LUKSO L14 testnetwork. This is meant to get you up and running with the [Universal Profile Extension](WIP) but also works using the [MetaMask](https://metamask.io/) wallet in a similar way.
+All listed examples on the hosted [landingpage](WIP) also feature other repositories that connect to the LUKSO L14 testnetwork. This is meant to get you up and running with the [Universal Profile Extension](https://docs.lukso.tech/guides/universal-profile/browser-extension/install-browser-extension) but also works using the [MetaMask](https://metamask.io/) by having less convenience.
 
-## Libraries Used on live examples
+## Libraries
 
-- [web3.js](https://github.com/ethers-io/ethers.js/)
+- [web3.js](https://web3js.readthedocs.io/en/v1.7.3/)
 
 ## Licence
 
-The project was forked and is licensed under the MIT license as its original,
-
-Original Copyright (c) 2016 Nick Dodson. nickdodson.com
+The project was forked and is licensed under the MIT license as its original.
 
 ```
 The MIT License
