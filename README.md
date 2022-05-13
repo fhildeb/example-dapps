@@ -21,7 +21,7 @@ Open any of the `.html` files in `Chrome` or `Firefox`. Everything runs out of t
 ## Available Examples
 
 - [Account dApp](WIP) - [code](./accounts.html) -- See your Ethereum accounts and balances
-- [First Contract dApp](WIP) - [code](./first-contract.html) -- Set and Get from a SimpleStore contract
+- [Simple Storage dApp](WIP) - [code](./simple-storage.html) -- Set and Get from a SimpleStore contract
 
 ## About
 
