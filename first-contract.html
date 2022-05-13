@@ -50,7 +50,7 @@
   <div class="row">
     <div class="column column-60">
       <label>Set Value</label>
-      <input id="valueAmount" type="number" placeholder="i.e. 4500" />
+      <input id="valueAmount" type="number" placeholder="i.e. 4500" required />
       <div id="error" style="color: #9b4dca; padding-bottom: 10px;">Anyone can set/get values to/from the blockchain.
       </div>
       <button id="setValue">Set Value</button>
@@ -132,28 +132,20 @@
           let input = el('#valueAmount').value;
 
           // Check if user input is a valid
-          if (input.length >= 1 && !isNaN(input)) {
 
-            // Update response and error element
-            el('#response').innerHTML = "Trying to set value...";
-            el('#error').innerHTML = "Anyone can set/get values to/from the blockchain.";
+          // Update response and error element
+          el('#response').innerHTML = "Trying to set value...";
+          el('#error').innerHTML = "Anyone can set/get values to/from the blockchain.";
 
-            /**
-             * Send set transaction from connected account.
-             * Will use first connected address on 3rd party extensions
-             */
-            simpleStoreInstance.methods.set(input).send({ from: account[0] })
-              .then(function (transactionReceipt) {
-                el('#response').innerHTML = 'Value set. Your transaction hash is: ' + transactionReceipt.transactionHash;
-              }).catch(e => { el('#response').innerHTML = 'Last transaction got canceled.'; });
-          }
+          /**
+           * Send set transaction from connected account.
+           * Will use first connected address on 3rd party extensions
+           */
+          simpleStoreInstance.methods.set(input).send({ from: account[0] })
+            .then(function (transactionReceipt) {
+              el('#response').innerHTML = 'Value set. Your transaction hash is: ' + transactionReceipt.transactionHash;
+            }).catch(e => { el('#response').innerHTML = 'Last transaction got canceled.'; });
 
-          // User input is invalid
-          else {
-
-            // Show invalid network notice
-            el('#error').innerHTML = "You have to input a number before setting the value!"
-          }
         });
 
         // Add get button functionality
