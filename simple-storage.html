@@ -5,46 +5,16 @@
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
   <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body class="container" style="padding-top: 3%;">
   <p><a href="index.html">Back to Landing Page</a></p>
   <h2>Simple Storage dApp</h2>
 
-  <!-- Extension Notice -->
-  <p class="note" style="display: block;">If you have MetaMask AND Universal Profile Browser extension installed, please
-    disable one of them! See the following guides for
-    <a href="https://support.google.com/chrome_webstore/answer/2664769?hl=en" target="_blank">Chrome</a> and
-    <a href="https://support.mozilla.org/en-US/kb/disable-or-remove-add-ons#w_disabling-and-removing-extensions"
-      target="_blank">Firefox</a> extensions.
-  </p>
-
-  <!-- Warnings -->
-  <p class="warning" id="extension">
-    You can use MetaMask with this dApp, but we recommend trying it with the <a
-      href="https://docs.lukso.tech/guides/universal-profile/browser-extension/install-browser-extension">Universal
-      Profile Browser Extension</a>.
-  </p>
-  <p class="warning" id="lowBalance">
-    Low account balance. Get some funds from <a href="http://faucet.l14.lukso.network/" target="_blank">the faucet</a>
-    in order to send transactions.
-  </p>
-  <p id="browser" class="warning">Please switch to a
-    <a href="https://www.google.com/chrome/" target="_blank">Chrome</a> or
-    <a href="https://www.mozilla.org/firefox/new/" target="_blank">Firefox</a> browser to use this dApp.
-  </p>
-  <p id="network" class="warning">
-    Please <a id="swapnetwork" style="cursor:pointer">change to the LUKSO L14 test network</a> to use this dApp.
-  </p>
-  <p id="install" class="warning">
-    Please install the
-    <a href="https://docs.lukso.tech/guides/universal-profile/browser-extension/install-browser-extension"
-      target="_blank">Universal Profile Browser Extension</a> or
-    <a href="https://metamask.io/" target="_blank">MetaMask</a> to use this dApp.
-  </p>
-  <div id="login" style="display: none">
-    <button id="loginbutton">Log in to your browser extension</button>
-  </div>
+  <!-- Import Notices and Warnings -->
+  <div id="notes"></div>
 
   <hr />
 
