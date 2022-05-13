@@ -67,10 +67,10 @@ async function checkNetwork() {
     let account = await ethereum.request({ method: "eth_accounts" });
 
     // Get the bytecode of the address or smart contract
-    let address = await web3.eth.getCode(account[0]);
+    let bytecode = await web3.eth.getCode(account[0]);
 
     // If address is EOA, likely a 3rd party extension is used
-    if (address == '0x') {
+    if (bytecode == '0x') {
 
       // Show 3rd party extension notice
       el("#extension").style.display = "block";
