@@ -163,7 +163,7 @@
           simpleStoreInstance.methods.set(input).send({ from: account[0] })
             .then(function (transactionReceipt) {
               el('#response').innerHTML = 'Value set. Your transaction hash is: ' + transactionReceipt.transactionHash;
-            }).catch(e => { el('#response').innerHTML = 'Last transaction got canceled.'; });
+            }).catch(e => { el('#response').innerHTML = 'Transaction canceled.'; });
 
         });
 
