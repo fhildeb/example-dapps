@@ -98,42 +98,20 @@
   <!-- Web3 -->
   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 
-  <!-- Connect Extension & Check Network -->
+  <!-- Connect Extension & Check Network & Check Balance & Change Network-->
   <script src="./utils.js"></script>
+
+  <!-- Query Selector & Login Event Function & Network Swap Function-->
+  <script src="./events.js"></script>
 
   <!-- Main Function -->
   <script type="text/javascript">
-
-    // Helper function to search for HTML elements
-    let el = function (id) { return document.querySelector(id); };
 
     // ABI of the deployed contract
     const SimpleStoreABI = [{ "inputs": [], "name": "get", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_value", "type": "uint256" }], "name": "set", "outputs": [], "stateMutability": "nonpayable", "type": "function" }];
 
     // Showing the ABI in the input field
     el('#abi').value = JSON.stringify(SimpleStoreABI, null, 2);
-
-    // If Web3 extension found
-    if (window.ethereum) {
-
-      // Enable login button functionality
-      el("#loginbutton").addEventListener("click", async function () {
-
-        // Request login of extension
-        await ethereum.request({ method: "eth_requestAccounts" });
-
-        // Hide button after login was successful
-        el("#login").style.display = "none";
-
-        // Restart application with logged-in extension
-        await app();
-      });
-
-      // Enable network swap
-      el("#swapnetwork").addEventListener("click", async function () {
-        await addLuksoTestnet();
-      });
-    }
 
     // Simple Storage Application
     async function app() {

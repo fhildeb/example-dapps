@@ -68,34 +68,15 @@
   <!-- Web3 -->
   <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 
-  <!-- Connect Extension & Check Network -->
+  <!-- Connect Extension & Check Network & Check Balance & Change Network-->
   <script src="./utils.js"></script>
+
+  <!-- Query Selector & Login Event Function & Network Swap Function-->
+  <script src="./events.js"></script>
 
   <!-- Main Function -->
   <script type="text/javascript">
-    let el = function (id) { return document.querySelector(id); };
 
-    // If Web3 extension found
-    if (window.ethereum) {
-
-      // Enable login button functionality
-      el("#loginbutton").addEventListener("click", async function () {
-
-        // Request login of extension
-        await ethereum.request({ method: "eth_requestAccounts" });
-
-        // Hide button after login was successful
-        el("#login").style.display = "none";
-
-        // Restart application with logged-in extension
-        await app();
-      });
-
-      // Enable network swap
-      el("#swapnetwork").addEventListener("click", async function () {
-        await addLuksoTestnet();
-      });
-    }
     // Account Application
     async function app() {
 

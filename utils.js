@@ -98,7 +98,7 @@ async function checkNetwork() {
 async function checkMinimalBalance() {
   const web3 = new Web3(window.ethereum);
   let accounts = await ethereum.request({ method: "eth_accounts" });
-  if(web3.utils.fromWei(await web3.eth.getBalance(accounts[0]), 'ether') > 0.25){
+  if(web3.utils.fromWei(await web3.eth.getBalance(accounts[0]), 'ether') < 0.25){
     el("#lowBalance").style.display = "block";
   }
 }
