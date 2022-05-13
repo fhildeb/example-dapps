@@ -32,7 +32,8 @@
     <a href="https://www.mozilla.org/firefox/new/" target="_blank">Firefox</a> browser to use this dApp.
   </p>
   <p id="network" class="warning">
-    Please <a href="https://docs.lukso.tech/networks/l14-testnet" target="_blank">swap to the LUKSO L14 testnetwork</a>
+    Please <a id="swapnetwork" style="cursor:pointer">swap to the LUKSO L14
+      testnetwork</a>
     in order to see
     your account balance.
   </p>
@@ -93,6 +94,11 @@
 
         // Restart application with logged-in extension
         await app();
+      });
+
+      // Enable network swap
+      el("#swapnetwork").addEventListener("click", async function () {
+        await addLuksoTestnet();
       });
     }
     // Account Application
