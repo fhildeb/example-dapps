@@ -48,7 +48,7 @@
 
   <hr />
 
-  <!-- dApp Frontend-->
+  <!-- Webpage Frontend-->
   <table>
     <thead>
       <tr>
@@ -91,15 +91,15 @@
         // Hide button after login was successful
         el("#login").style.display = "none";
 
-        // Rerun dApp with logged-in extension
-        await dApp();
+        // Restart application with logged-in extension
+        await app();
       });
     }
-    // dApp Functionality
-    async function dApp() {
+    // Account Application
+    async function app() {
 
       /**
-       * Only start the dApp if an extension is installed and right network connected 
+       * Only start the application if an extension is installed and right network connected 
        * Functions can be found in utils.js and return bool
        */
       if (await connectWeb3() && await checkNetwork()) {
@@ -123,8 +123,8 @@
       }
     };
 
-    // Start the dApp function
-    dApp();
+    // Start the application
+    app();
   </script>
 </body>
 
