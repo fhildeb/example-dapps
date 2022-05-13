@@ -71,8 +71,13 @@ async function checkNetwork() {
         // Show wrong network notice
         el("#network").style.display = "block";
         return false;
+
       }
-      // 3rd party extension is connected to the right network
+      /**
+       * 3rd party extension is connected to the right network.
+       * Check if balance on network is enough to send transactions
+       */
+      await checkMinimalBalance();
       return true;
     }
 
@@ -88,6 +93,14 @@ async function checkNetwork() {
     return false;
   }
   
+}
+
+async function checkMinimalBalance() {
+  const web3 = new Web3(window.ethereum);
+  let accounts = await ethereum.request({ method: "eth_accounts" });
+  if(web3.utils.fromWei(await web3.eth.getBalance(accounts[0]), 'ether') > 0.25){
+    el("#lowBalance").style.display = "block";
+  }
 }
 
 async function addLuksoTestnet() {
