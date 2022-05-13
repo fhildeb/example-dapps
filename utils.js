@@ -17,19 +17,6 @@ async function connectWeb3() {
 
         // If no account was found
         if (!account.length) {
-          
-          // Enable login button functionality
-          el("#loginbutton").addEventListener("click", async function () {
-
-            // Request login of extension
-            await ethereum.request({ method: "eth_requestAccounts" });
-
-            // Hide button after login was successful
-            el("#login").style.display = "none";
-
-            // Rerun dApp with logged-in extension
-            await dApp();
-          });
 
           // Show login button 
           el("#login").style.display = "block";
