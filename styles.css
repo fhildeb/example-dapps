@@ -1,10 +1,5 @@
 .note,
 .warning {
-    &::before {
-        font-size: 20px;
-        margin-right: 10px;
-    }
-
     display: none;
     background-color: white;
     border: solid 1px white;
@@ -15,20 +10,26 @@
     margin-bottom: 10px;
 }
 
-.note {
-    &::before {
-        content: "📝";
-    }
+.note::before,
+.warning::before {
+    font-size: 20px;
+    margin-right: 10px;
+}
 
+.note {
     background-color: #f0f7fb;
     border-color: #3498db;
 }
 
-.warning {
-    &::before {
-        content: "⚠️";
-    }
+.note::before {
+    content: "📝";
+}
 
+.warning {
     background-color: #fbf5f0;
     border-color: #db6334;
+}
+
+.warning::before {
+    content: "⚠️";
 }
