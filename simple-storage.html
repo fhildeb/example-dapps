@@ -9,7 +9,7 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
-<body class="container" style="padding-top: 3%;">
+<body class="container">
   <p><a href="index.html">Back to Landing Page</a></p>
   <h2>Simple Storage dApp</h2>
 
@@ -23,18 +23,18 @@
     <div class="column column-60">
       <label>Set Value</label>
       <input id="valueAmount" type="number" placeholder="i.e. 4500" required />
-      <div id="error" style="color: #9b4dca; padding-bottom: 10px;">Anyone can set/get values to/from the blockchain.
+      <div class="txnote">Anyone can set/get values to/from the blockchain.
       </div>
       <button id="setValue">Set Value</button>
       <button id="getValue">Get Value</button>
 
       <br /><br />
-      <div id="response" style="padding: 20px; border: 1px solid #9b4dca; word-wrap: break-word; min-height: 94px">
+      <div id="response" class="response">
         Empty response window</div>
     </div>
     <div class="column column-40">
       <label>ABI</label>
-      <textarea id="abi" style="height: 256px;"></textarea>
+      <textarea id="abi" class="abi"></textarea>
     </div>
   </div>
 
@@ -61,7 +61,7 @@
 
   <hr />
 
-  <b style="padding-bottom: 50px ">Repository File:</b></br><a
+  <b>Repository File:</b></br><a
     href="https://github.com/lukso-network/example-dapps-ethjs/blob/master/simple-storage.html"
     target="_blank">lukso-network/example-dapps-ethjs/simple-storage.html</a>
 
@@ -107,7 +107,6 @@
 
           // Update response and error element
           el('#response').innerHTML = "Trying to set value...";
-          el('#error').innerHTML = "Anyone can set/get values to/from the blockchain.";
 
           /**
            * Send set transaction from connected account.
