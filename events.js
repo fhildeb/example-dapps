@@ -1,8 +1,8 @@
 // Helper function to search for HTML elements
 let el = function (id) { return document.querySelector(id); };
 
-// Before adding events to HTML elements, load them into the Webpage
-$('#notes').load('notes.html', function() {
+// Before adding events to HTML elements, load notifications into the Webpage
+$('#notifications').load('notifications.html', function() {
 
   // If Web3 extension found
   if (window.ethereum) {
