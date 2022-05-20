@@ -89,6 +89,7 @@ async function checkNetwork() {
         return false;
 
       }
+      
       /**
        * 3rd party extension is connected to the right network.
        * Check if balance on network is enough to send transactions
