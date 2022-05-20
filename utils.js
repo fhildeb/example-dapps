@@ -30,15 +30,16 @@ async function connectWeb3() {
     // Provider not set or invalid
     } catch (e) {
 
-      // Show install extension notice
+      // Show install extension notification
       el("#install").style.display = "block";
       return false;
     }
   }
+
   // Browser is not supported
   else {
 
-    // Show unsupported browser notice
+    // Show unsupported browser notification
     el("#browser").style.display = "block";
     return false;
   }
@@ -67,7 +68,7 @@ async function checkNetwork() {
     // If address is EOA, likely a 3rd party extension is used
     if (bytecode === '0x') {
 
-      // Show 3rd party extension notice
+      // Show 3rd party extension notification
       el("#extension").style.display = "block";
 
       // Get its network ID
@@ -76,7 +77,7 @@ async function checkNetwork() {
       // Check if its connected to the wrong network
       if (networkID !== 22) {
         
-        // Show wrong network notice
+        // Show wrong network notification
         el("#network").style.display = "block";
         return false;
 
