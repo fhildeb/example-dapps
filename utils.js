@@ -135,4 +135,4 @@ async function addLuksoTestnet() {
       
     // User denied access
   }
-};
+}
