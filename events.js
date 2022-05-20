@@ -17,12 +17,13 @@ $('#notifications').load('notifications.html', function() {
       el("#login").style.display = "none";
     
       // Restart application with logged-in extension
-      await app();
+      app();
     });
 
     // Enable network swap
       el("#swapnetwork").addEventListener("click", async function () {
       await addLuksoTestnet();
+      el("#network").style.display = "none";
     });
   }
 });
